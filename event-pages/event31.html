@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SYSTEM PROGRAMMING - SVPCET ACM Student Chapter</title>
+    <meta name="description"
+        content="System Programming workshop: Linux internals, development & profiling tools, Docker fundamentals, and scalable systems. Organized by ACM CE Student Chapter & ACM Nagpur Professional Chapter." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../header.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <style>
+                /* Register button styles adapted from user's CSS (applies to anchor with .btn-register) */
+                .btn-register{
+                    padding: 12.5px 30px;
+                    border: 0;
+                    border-radius: 100px;
+                    background-color: #2ba8fb;
+                    color: #ffffff;
+                    font-weight: 700;
+                    transition: all 0.5s;
+                    -webkit-transition: all 0.5s;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    text-decoration: none;
+                }
+
+                .btn-register:hover{
+                    background-color: #6fc5ff;
+                    box-shadow: 0 0 20px #6fc5ff50;
+                    transform: scale(1.1);
+                }
+
+                .btn-register:active{
+                    background-color: #3d94cf;
+                    transition: all 0.25s;
+                    -webkit-transition: all 0.25s;
+                    box-shadow: none;
+                    transform: scale(0.98);
+                }
+
+                /* small accessibility tweak: focus outline */
+                .btn-register:focus{
+                    outline: 3px solid #6fc5ff40;
+                    outline-offset: 2px;
+                }
+        </style>
+</head>
+
+<body>
+
+    <header class="College_Mission_Info">
+        <div onclick="window.location.href = 'https://stvincentngp.edu.in/'" class="College_Logo">
+            <img src="../images/svpcet-logo.png" alt="College_Logo" />
+        </div>
+        <div class="College_NamePlate">
+            <p>
+                <b class="svp">ST. VINCENT PALLOTTI</b> <br>
+                <b class="cet">COLLEGE ENGINEERING AND TECHNOLOGY, NAGPUR</b>
+                <br /><span>An Autonomous Institution</span>
+            </p>
+            <p class="h1"> Department of Computer Engineering </p>
+            <p class="h1">ACM CE Student Chapter</p>
+        </div>
+        <div onclick="window.location.href = 'https://www.acm.org/'" class="acm_Logo">
+            <img src="../images/svpcet-acm-logo.png" alt="acm_logo" />
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../events.html" class="nav-link">Events</a>
+                <a href="../team.html" class="nav-link">Team</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
+                <a href="../leaderboard/leaderboard.html" class="nav-link">Leaderboard</a>
+                <button class="btn btn-primary">Join Us</button>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Event Hero -->
+    <section class="event-hero">
+        <div class="container">
+            <div class="event-hero-content">
+                <div style="flex:1; min-width:280px;">
+                    <h1>SYSTEM PROGRAMMING — An Industry Expert Led Workshop</h1>
+                    <div class="event-status-badge upcoming" style="width: 23rem;">
+                        <i class="fas fa-calendar-plus"></i>
+                        Upcoming
+                    </div>
+                    <p style="margin-top:12px; color:#cbd5e1;">
+                        Department of Computer Science & Engineering, through its ACM CE Student Chapter, in association with ACM Nagpur Professional Chapter, presents a practical, industry-led workshop covering Linux internals, development & profiling tools, and container fundamentals.
+                    </p>
+
+                    <div class="event-meta-info" style="margin-top:12px;">
+                        <div class="meta-item"><i class="fas fa-calendar-alt"></i>
+                            <div><strong>Date</strong><span style="display:block">Saturday, 1st November 2025</span></div>
+                        </div>
+                        <div class="meta-item"><i class="fas fa-clock"></i>
+                            <div><strong>Time</strong><span style="display:block">10:00 AM – 01:00 PM</span></div>
+                        </div>
+                        <div class="meta-item"><i class="fas fa-map-marker-alt"></i>
+                            <div><strong>Venue</strong><span style="display:block">Computer Labs, 1st Floor, Department of CSE</span></div>
+                        </div>
+                        <div class="meta-item"><i class="fas fa-ticket"></i>
+                            <div><strong>Registration Fee</strong><span style="display:block">Free</span></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:14px; display: flex; justify-content: center; align-items: center;">
+                         <div style="margin-top:12px;"><a class="btn btn-primary" href="https://forms.gle/R2SS6G6cfWivsigr8" target="_blank" rel="noopener">Register (Free)</a></div>
+                        
+                    </div>
+                </div>
+
+                <div style="min-width:260px;">
+                    <!-- use system.webp as requested -->
+                    <img class="md:w-[51%] sd:w-[99%]" style="height: 518px;" src="../images/events/system.webp" alt="System Programming Banner" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section class="event-details">
+        <div class="container">
+            <div class="event-content">
+                <!-- Left / main column -->
+                <div class="event-main">
+                    <div class="section" id="about">
+                        <h2>About the Workshop</h2>
+                        <p>
+                            This hands-on workshop focuses on practical system programming topics useful for software developers and engineers. The session includes Linux fundamentals (processes, threads, memory and profiling), essential development tools (GCC, Clang, Makefiles, Git, Valgrind and more), Docker fundamentals (containers, networks, volumes, composition) and scalable system design (synchronous vs asynchronous). The workshop will feature demos, live walkthroughs and Q&A with industry experts from Arista Networks and Persistent Systems.
+                        </p>
+                    </div>
+
+                    <div class="section">
+                        <h2>Industry Experts & Team</h2>
+
+                        <div class="speakers-grid" style="margin-top:12px; margin-bottom:12px;">
+                            <div class="speaker">
+                              
+                                <div>
+                                    <strong>Mr. Asang Dani</strong>
+                                    <div style="color:#6b7280; font-size:13px;">Member of Technical Staff, Arista Networks</div>
+                                </div>
+                            </div>
+
+                            <div class="speaker">
+                               
+                                <div>
+                                    <strong>Mr. Manoj Dhanorkar</strong>
+                                    <div style="color:#6b7280; font-size:13px;">Principal Architect, Persistent Systems, Nagpur</div>
+                                </div>
+                            </div>
+
+                            <div class="speaker">
+                                
+                                <div>
+                                    <strong>Mr. Gunjan Garge</strong>
+                                    <div style="color:#6b7280; font-size:13px;">Senior Architect, Persistent Systems</div>
+                                </div>
+                            </div>
+
+                            <div class="speaker">
+                               
+                                <div>
+                                    <strong>Mr. Abhishek Anne</strong>
+                                    <div style="color:#6b7280; font-size:13px;">Senior Engineering Lead, Persistent Systems</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" id="topics">
+                        <h2>Key Topics Covered</h2>
+                        <ul class="highlights-grid" style="margin-top:10px;">
+                            <li>Linux Fundamentals — Processes, Threads, Memory & Profiling</li>
+                            <li>Development Tools — GCC, Clang, Makefiles, Git, Valgrind & more</li>
+                            <li>Docker Fundamentals — Containers, Networks, Volumes, Composition</li>
+                            <li>Scalable Systems — Synchronous vs Asynchronous</li>
+                        </ul>
+                    </div>
+
+                    <div class="section" id="agenda">
+                        <h2>Agenda (Tentative)</h2>
+                        <ul class="agenda-list" style="margin-top:12px;">
+                            <li>
+                                <div class="agenda-time">10:00 - 10:15</div>
+                                <div>
+                                    <div style="font-weight:700">Welcome & Introduction</div>
+                                    <div style="color:#6b7280; font-size:13px;">Opening remarks by faculty coordinator and organizers</div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="agenda-time">10:15 - 11:00</div>
+                                <div>
+                                    <div style="font-weight:700">Linux Fundamentals</div>
+                                    <div style="color:#6b7280; font-size:13px;">Processes, threads, system calls and memory profiling</div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="agenda-time">11:00 - 11:30</div>
+                                <div>
+                                    <div style="font-weight:700">Development Tools</div>
+                                    <div style="color:#6b7280; font-size:13px">GCC/Clang, Makefiles, Git and Valgrind demos</div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="agenda-time">11:30 - 12:10</div>
+                                <div>
+                                    <div style="font-weight:700">Docker Fundamentals</div>
+                                    <div style="color:#6b7280; font-size:13px;">Containers, networks, volumes and composing services</div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="agenda-time">12:10 - 12:40</div>
+                                <div>
+                                    <div style="font-weight:700">Scalable Systems</div>
+                                    <div style="color:#6b7280; font-size:13px;">Synchronous vs asynchronous design patterns</div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="agenda-time">12:40 - 01:00</div>
+                                <div>
+                                    <div style="font-weight:700">Q&A & Closing</div>
+                                    <div style="color:#6b7280; font-size:13px;">Final thoughts, feedback and certificates</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section" id="notes">
+                        <h2>Notes for Participants</h2>
+                        <p style="color:#374151;">
+                            Participants are encouraged to bring a laptop with a Linux environment (WSL / Ubuntu / VM) for hands-on exercises, if possible. Registration is free — please reserve your spot through the form.
+                        </p>
+                    </div>
+
+                    <!-- <div class="section" id="gallerySection">
+                        <h2>Gallery (Placeholders)</h2>
+                        <div class="gallery-grid" style="display:flex; gap:8px; flex-wrap:wrap;">
+                            <img src="https://via.placeholder.com/220x140.png?text=Gallery+1" alt="Gallery Image" style="max-width:17rem; margin:5px;">
+                            <img src="https://via.placeholder.com/220x140.png?text=Gallery+2" alt="Gallery Image" style="max-width:17rem; margin:5px;">
+                            <img src="https://via.placeholder.com/220x140.png?text=Gallery+3" alt="Gallery Image" style="max-width:17rem; margin:5px;">
+                            <img src="https://via.placeholder.com/220x140.png?text=Gallery+4" alt="Gallery Image" style="max-width:17rem; margin:5px;">
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Right / sidebar column -->
+                <div class="event-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Quick Details</h3>
+                        <p style="margin:6px 0; color:#374151;"><strong>Date:</strong> Saturday, 1st November 2025</p>
+                        <p style="margin:6px 0; color:#374151;"><strong>Time:</strong> 10:00 AM – 01:00 PM</p>
+                        <p style="margin:6px 0; color:#374151;"><strong>Venue:</strong> Computer Labs, 1st Floor, Department of CSE</p>
+                        <p style="margin:6px 0; color:#374151;"><strong>Fee:</strong> Free</p>
+                        
+                        <div style="margin-top:12px;"><a class="btn btn-primary" href="https://forms.gle/R2SS6G6cfWivsigr8" target="_blank" rel="noopener">Register (Free)</a></div>
+                    </div>
+
+                    <div class="sidebar-card" style="margin-top:14px;">
+                        <h3>Coordinators</h3>
+                        <ul class="contacts-list" style="margin-top:8px;">
+                            <li><strong>Faculty Coordinator:</strong><br>Dr. Pallavi Wankhede <br> 📞 <a href="tel:+919970425086">+91 9970425086</a></li>
+                            <li style="margin-top:8px;"><strong>Student Coordinators:</strong><br>Manthan Shirke <br> 📞 <a href="tel:+917666458896">+91 7666458896</a> <br>Adolph Peter <br> 📞 <a href="tel:+917387310958">+91 7387310958</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="sidebar-card" style="margin-top:14px;">
+                        <h3>Organizers</h3>
+                        <p style="color:#374151; margin-top:6px;">ACM CE Student Chapter, Department of Computer Science & Engineering<br>In association with  ACM Nagpur Professional Chapter</p>
+                    </div> -->
+
+                    <!-- <div class="sidebar-card" style="margin-top:14px;">
+                        <h3>Organizer Note</h3>
+                        <p style="color:#374151; margin-top:6px;">Bring your laptop with a Linux environment (WSL / Ubuntu / VM) for the hands-on exercises if possible. Seats may be limited — register to reserve your spot.</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="brand-icon">
+                            <img src="../images/svpcet-acm-logo.png" alt="ACM SVPCET Logo"
+                                style="width: 40px; height: 40px; object-fit: contain;">
+                        </div>
+                        <div class="brand-text">
+                            <h3>ACM SVPCET</h3>
+                            <p>Student Chapter</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Empowering future tech leaders through innovation, collaboration, and excellence.
+                    </p>
+                    <button class="btn btn-primary">Join Us Today</button>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#domains">Domains</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Domains</h4>
+                    <ul class="footer-links">
+                        <li>Technical</li>
+                        <li>Competitive Programming</li>
+                        <li>Web Development</li>
+                        <li>Management</li>
+                        <li>Creative</li>
+                        <li>Publicity</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>SVPCET, Gavasi Manapur, Wardha Road, Nagpur - 441108</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>acm@stvincentngp.edu.in</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+91 7129399721</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SVPCET ACM Student Chapter. All Rights Reserved. | Designed with ❤️ by ACM Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>
